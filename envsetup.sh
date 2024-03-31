@@ -584,6 +584,11 @@ function lunch()
 
     local product release variant
 
+    if [ -z "$variant" ]; then
+        variant=$release
+        release=$(find "${ANDROID_BUILD_TOP}"/build/release/aconfig/* -maxdepth 0 -type d -name "[a-z][a-z][0-9][a-z]" -printf '%f\n' | tail -n1)
+    fi
+
     # Handle the legacy format
     local legacy=$(echo $1 | grep "-")
     if [[ $# -eq 1 && -n $legacy ]]; then
