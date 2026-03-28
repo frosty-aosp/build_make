@@ -3640,7 +3640,7 @@ endif
 systemimage-changelog:
 ifneq (1,$(USER_BUILD_NO_CHANGELOG))
 	@echo "Making changelog!"
-	./vendor/aicp/tools/changelog $(PRODUCT_OUT)
+	./vendor/frosty/tools/changelog $(PRODUCT_OUT)
 else
 	@echo "Skipping changelog!"
 endif
@@ -7248,7 +7248,7 @@ $(call declare-0p-target,$(INTERNAL_OTA_METADATA))
 ifeq ($(TARGET_BUILD_VARIANT),user)
     $(INTERNAL_OTA_PACKAGE_TARGET): backuptool := false
 else
-ifneq ($(AICP_BUILD),)
+ifneq ($(FROSTY_BUILD),)
     $(INTERNAL_OTA_PACKAGE_TARGET): backuptool := true
 else
     $(INTERNAL_OTA_PACKAGE_TARGET): backuptool := false

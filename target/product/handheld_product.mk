@@ -34,7 +34,7 @@ PRODUCT_PACKAGES += \
     SettingsIntelligence \
     frameworks-base-overlays
 
-ifeq ($(AICP_BUILD),)
+ifeq ($(FROSTY_BUILD),)
 PRODUCT_PACKAGES += \
     LatinIME
 endif
