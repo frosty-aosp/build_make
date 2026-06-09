@@ -27,8 +27,8 @@
 #
 
 BUILDING_GSI := true
-ifneq ($(filter aicp_gsi_%,$(TARGET_PRODUCT)),)
-BUILDING_AICP_GSI := true
+ifneq ($(filter frosty_gsi_%,$(TARGET_PRODUCT)),)
+BUILDING_FROSTY_GSI := true
 endif
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
