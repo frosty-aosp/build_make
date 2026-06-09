@@ -2953,7 +2953,7 @@ endef
 define sign-package-arg
 $(hide) mv $(1) $(1).unsigned
 $(hide) $(JAVA) -Djava.library.path=$$(dirname $(SIGNAPK_JNI_LIBRARY_PATH)) -jar $(SIGNAPK_JAR) \
-    $(if $(strip $(PRIVATE_CERTIFICATE_AICP)), --aicp $(PRIVATE_CERTIFICATE_AICP)) \
+    $(if $(strip $(PRIVATE_CERTIFICATE_FROSTY)), --frosty $(PRIVATE_CERTIFICATE_FROSTY)) \
     $(if $(strip $(PRIVATE_ROTATION_MIN_SDK_VERSION)), --rotation-min-sdk-version $(PRIVATE_ROTATION_MIN_SDK_VERSION)) \
     $(PRIVATE_CERTIFICATE) $(PRIVATE_PRIVATE_KEY) \
     $(PRIVATE_ADDITIONAL_CERTIFICATES) $(1).unsigned $(1).signed
